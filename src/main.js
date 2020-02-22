@@ -27,7 +27,7 @@ class Main extends Component {
           imageLink:
             "https://media.contentapi.ea.com/content/dam/eacom/common/ea-hero-md-bg-mashup-trailer-7x2-xl.jpg.adapt.320w.jpg",
           price: 400,
-          star: 4
+          star: 2
         },
         {
           id: "3",
@@ -53,9 +53,17 @@ class Main extends Component {
           price: 100,
           star: 5
         }
-      ]
+      ],
+      demands: []
     };
   }
+
+  addToCart = buy => {
+    this.setState(prevState => ({
+      demands: [...prevState.demands, buy]
+    }));
+    console.log(this.state.members.length);
+  };
 
   displayMenuHam = () => {
     if (this.state.display === false) {
@@ -80,7 +88,12 @@ class Main extends Component {
         />
         <div className="continut">
           {this.state.stoc.map(stk => (
-            <Cartonas class="cart" stoc={stk} key={stk.id} />
+            <Cartonas
+              class="cart"
+              stoc={stk}
+              key={stk.id}
+              addToBag={this.addToCart}
+            />
           ))}
         </div>
       </div>

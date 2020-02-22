@@ -8,14 +8,14 @@ import ButtonAdd from "./button";
 
 class Cartonas extends Component {
   render() {
-    console.log(this.props.stoc);
+    
     return (
       <div className="cartonas">
         <Images imgLink={this.props.stoc.imageLink}/>
         <TitleCart title={this.props.stoc.title}/>
         <Price price={this.props.stoc.price}/>
         <Review numberStars={this.props.stoc.star}/>
-        <ButtonAdd />
+        <ButtonAdd item={this.props.stoc} buy={this.props.addToBag}/>
       </div>
     );
   }
