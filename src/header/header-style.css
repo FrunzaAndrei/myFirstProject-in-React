@@ -1,0 +1,107 @@
+.navbar-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    background-color: rgb(4, 4, 106);
+    margin: 0;
+    z-index: 20;
+}
+
+.LogoName {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.LogoName:hover {
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.LogoName {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.menu-principal {
+    display: flex;
+    list-style: none;
+}
+
+.hamburger-menu {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+    flex: 1;
+}
+
+.menu-item {
+    padding: 7px 30px;
+    font-size: 20px;
+    color: white;
+}
+
+.menu-item:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.hamurger-icon {
+    display: none;
+    padding: 12px;
+}
+
+.icon-img {
+    width: 42px;
+}
+
+.line-hamburger {
+    border-bottom: 3px solid rgb(4, 4, 106);
+    width: 20px;
+}
+
+.hamburger-contain {
+    position: absolute;
+    display: block;
+    float: left;
+    width: 55%;
+    z-index: 10;
+    height: 100em;
+    background: rgb(4, 4, 106);
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.display-blank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100em;
+    width: 100em;
+    background: black;
+    opacity: 0.5;
+}
+
+#displayBlockBlank, #displayBlock {
+    display: block;
+}
+
+#displayNone, #displayNoneBlank {
+    display: none;
+}
+
+@media (max-width:880px) {
+    .hamurger-icon {
+        display: block;
+    }
+    .menu-principal {
+        display: none;
+    }
+}
