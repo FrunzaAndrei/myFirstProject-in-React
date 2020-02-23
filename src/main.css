@@ -18,6 +18,10 @@
     text-align: center;
 }
 
+.carousel {
+    margin-bottom: 30px;
+}
+
 @media (max-width:1300px) {
     .continut {
         width: 1100px;

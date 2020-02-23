@@ -7,8 +7,6 @@ const Review = props => {
   let numberEmptyStar = 5 - numberStar;
   const objects = [];
 
-  console.log(typeof numberStar);
-
   if (numberEmptyStar !== 0) {
     for (let i = 0; i < numberStar; i++) {
       objects.push(<FaStar color="yellow" size="1.5em" />);

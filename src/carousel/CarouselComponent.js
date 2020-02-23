@@ -5,7 +5,14 @@ import { Carousel } from "react-responsive-carousel";
 const CarouselComponent = props => {
   return (
     <div class="carousel-wrapper">
-      <Carousel infiniteLoop useKeyboardArrows autoPlay>
+      <Carousel
+        infiniteLoop
+        useKeyboardArrows
+        autoPlay
+        axis="horizontal"
+        showStatus={false}
+        showThumbs={false}
+      >
         <div>
           <img src="../img-01.jpg" />
         </div>
