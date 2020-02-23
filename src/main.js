@@ -8,6 +8,9 @@ import Cartonas from "./cartonas-prod/cartonas";
 import CarouselComponent from "./carousel/CarouselComponent";
 import "./main.css";
 import stoc from "./stoc";
+import About from "./about-page/about";
+import Contact from "./contact-page/contact";
+import { Route } from "react-router-dom";
 
 class Main extends Component {
   constructor(props) {
@@ -15,15 +18,22 @@ class Main extends Component {
     this.state = {
       display: false,
       stoc: stoc,
-      demands: []
+      demands: [],
+      screen: "Home"
     };
   }
+
+  navigate = namePage => {
+    this.setState({
+      screen: namePage
+    });
+  };
 
   addToCart = buy => {
     this.setState(prevState => ({
       demands: [...prevState.demands, buy]
     }));
-    setTimeout(console.log(this.state.demands),9000);
+    setTimeout(console.log(this.state.demands), 9000);
   };
 
   displayMenuHam = () => {
@@ -41,25 +51,55 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        <Navbar displayMenuH={this.displayMenuHam} />
-        <HamburgerContain displayItem={this.state.display} />
+        <Navbar displayMenuH={this.displayMenuHam} navig={this.navigate} />
+        <HamburgerContain
+          displayItem={this.state.display}
+          navig={this.navigate}
+        />
         <DisplayBlank
           displayItem={this.state.display}
           displayMenu={this.displayMenuHam}
         />
-        <div className="carousel">
-            <CarouselComponent/>
-        </div>
-        <div className="continut">
-          {this.state.stoc.map(stk => (
-            <Cartonas
-              class="cart"
-              stoc={stk}
-              key={stk.id}
-              addToBag={this.addToCart}
-            />
-          ))}
-        </div>
+
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <div>
+              <div className="carousel">
+                <CarouselComponent />
+              </div>
+              <div className="continut">
+                {this.state.stoc.map(stk => (
+                  <Cartonas
+                    class="cart"
+                    stoc={stk}
+                    key={stk.id}
+                    addToBag={this.addToCart}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        />
+
+        <Route
+          path="/about"
+          render={() => (
+            <div>
+              <About />
+            </div>
+          )}
+        />
+
+        <Route
+          path="/contact"
+          render={() => (
+            <div>
+              <Contact />
+            </div>
+          )}
+        />
       </div>
     );
   }

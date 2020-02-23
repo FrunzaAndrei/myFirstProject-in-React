@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const CarouselComponent = props => {
   return (
-    <div class="carousel-wrapper">
+    <div className="carousel-wrapper">
       <Carousel
         infiniteLoop
         useKeyboardArrows

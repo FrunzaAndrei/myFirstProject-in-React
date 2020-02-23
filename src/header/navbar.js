@@ -5,7 +5,7 @@ import "./header-style.css";
 import IconHamb from "./hamburger-icon";
 
 const Navbar = props => {
-  return (
+ return (
     <div className="navbar-div">
       <IconHamb displayMenu = {props.displayMenuH}/>
       <Logo lgName="MyProject" />

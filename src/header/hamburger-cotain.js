@@ -13,7 +13,7 @@ const HamburgerContain = props => {
 
   return (
     <div className="hamburger-contain" id={displayBlock(props.displayItem)}>
-      <Menu clasaMeniu="hamburger-menu" />
+      <Menu clasaMeniu="hamburger-menu"/>
     </div>
   );
 };
