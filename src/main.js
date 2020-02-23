@@ -6,6 +6,7 @@ import HamburgerContain from "./header/hamburger-cotain";
 import DisplayBlank from "./header/screen-blank";
 import Cartonas from "./cartonas-prod/cartonas";
 import "./main.css";
+import CarouselComponent from "./carousel/CarouselComponent";
 
 class Main extends Component {
   constructor(props) {
@@ -86,6 +87,9 @@ class Main extends Component {
           displayItem={this.state.display}
           displayMenu={this.displayMenuHam}
         />
+        <div className="carousel">
+            <CarouselComponent/>
+        </div>
         <div className="continut">
           {this.state.stoc.map(stk => (
             <Cartonas
