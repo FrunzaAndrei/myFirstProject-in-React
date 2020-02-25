@@ -126,6 +126,35 @@
     font-size: 13px;
 }
 
+.cart-total-price {
+    display: none;
+    position: absolute;
+    top: 31px;
+    left: -22px;
+    padding: 5px 10px;
+    background: black;
+    border-radius: 6px;
+    color: white;
+    opacity: 0.9;
+    z-index: 2000;
+    width: 75px;
+}
+
+.cart-total-price::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+.cart-icon:hover .cart-total-price {
+    display: block;
+}
+
 @media (max-width:1200px) {
     .cart-icon {
         margin-left: -30px;

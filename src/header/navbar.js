@@ -16,7 +16,7 @@ const Navbar = props => {
       <div></div>
       {/* just space for flex */}
       <Menu clasaMeniu="menu-principal"/>
-      <CartIcon numberItem={props.itemPurchased}/>
+      <CartIcon numberItem={props.itemPurchased} finalPrice={props.totalPrice}/>
     </div>
   );
 };

@@ -47,11 +47,14 @@ class Main extends Component {
     }
   };
 
-  componentDidUpdate() {
-    console.log(this.state.demands);
-    console.log("Component Update");
-    console.log(this.state.demands.length);
-  }
+  totalPrice = () => {
+    let finalPrice = 0;
+    this.state.demands.map(item => {
+      finalPrice += item.price;
+    });
+
+    return finalPrice;
+  };
 
   numberOfItemsPurchased = () => {
     return this.state.demands.length;
@@ -64,6 +67,7 @@ class Main extends Component {
           displayMenuH={this.displayMenuHam}
           navig={this.navigate}
           itemPurchased={this.numberOfItemsPurchased}
+          totalPrice={this.totalPrice}
         />
         <HamburgerContain
           displayItem={this.state.display}

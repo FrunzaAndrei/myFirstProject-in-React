@@ -25,7 +25,7 @@ const stoc= [
     },
     {
       id: "4",
-      title: "Little Yoga",
+      title: "Little Yoda",
       imageLink:
         "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/1231047442892",
       price: 140,
