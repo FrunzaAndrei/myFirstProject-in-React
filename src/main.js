@@ -33,7 +33,6 @@ class Main extends Component {
     this.setState(prevState => ({
       demands: [...prevState.demands, buy]
     }));
-    setTimeout(console.log(this.state.demands), 9000);
   };
 
   displayMenuHam = () => {
@@ -48,10 +47,24 @@ class Main extends Component {
     }
   };
 
+  componentDidUpdate() {
+    console.log(this.state.demands);
+    console.log("Component Update");
+    console.log(this.state.demands.length);
+  }
+
+  numberOfItemsPurchased = () => {
+    return this.state.demands.length;
+  };
+
   render() {
     return (
       <div className="main">
-        <Navbar displayMenuH={this.displayMenuHam} navig={this.navigate} />
+        <Navbar
+          displayMenuH={this.displayMenuHam}
+          navig={this.navigate}
+          itemPurchased={this.numberOfItemsPurchased}
+        />
         <HamburgerContain
           displayItem={this.state.display}
           navig={this.navigate}

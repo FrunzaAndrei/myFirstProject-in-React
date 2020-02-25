@@ -5,7 +5,7 @@ const CartIcon = props => {
   return (
     <div className="cart-icon">
       <img src={Icon} className="cart-icon-img" />
-      <p className="cart-number-items">{props.numberItem}</p>
+      <p className="cart-number-items">{props.numberItem()}</p>
     </div>
   );
 };
