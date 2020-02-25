@@ -126,11 +126,6 @@
     font-size: 13px;
 }
 
-@media (max-width:1200px) {
-    .cart-icon {
-        margin-left: -30px;
-    }
-}
 
 @media (max-width:880px) {
     .hamurger-icon {
