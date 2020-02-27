@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-expressions */
 import React from "react";
 import { Component } from "react";
@@ -8,9 +9,9 @@ import Cartonas from "./cartonas-prod/cartonas";
 import CarouselComponent from "./carousel/CarouselComponent";
 import "./main.css";
 import stoc from "./stoc";
-import About from "./about-page/about";
 import Contact from "./contact-page/contact";
 import { Route } from "react-router-dom";
+import YourCart from "./your-cart/yourCart";
 
 class Main extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class Main extends Component {
       display: false,
       stoc: stoc,
       demands: [],
-      screen: "Home"
+      screen: "Home",
+      displayReceipt: false
     };
   }
 
@@ -31,7 +33,8 @@ class Main extends Component {
 
   addToCart = buy => {
     this.setState(prevState => ({
-      demands: [...prevState.demands, buy]
+      demands: [...prevState.demands, buy],
+      displayReceipt: true
     }));
   };
 
@@ -52,6 +55,7 @@ class Main extends Component {
     this.state.demands.map(item => {
       finalPrice += item.price;
     });
+    this.forRenderFinalReceipt();
 
     return finalPrice;
   };
@@ -59,6 +63,17 @@ class Main extends Component {
   numberOfItemsPurchased = () => {
     return this.state.demands.length;
   };
+
+  forRenderFinalReceipt() {
+    this.state.stoc.map(demand => (demand.itemSold = 0));
+    this.state.demands.map(demand => {
+      for (let i = 0; i < this.state.stoc.length; i++) {
+        if (this.state.stoc[i].id === demand.id) {
+          this.state.stoc[i].itemSold++;
+        }
+      }
+    });
+  }
 
   render() {
     return (
@@ -101,10 +116,14 @@ class Main extends Component {
         />
 
         <Route
-          path="/about"
+          path="/yourCart"
           render={() => (
             <div>
-              <About />
+              <YourCart
+                items={this.state.stoc}
+                condition={this.state.displayReceipt}
+                finalPrice = {this.totalPrice()}
+              />
             </div>
           )}
         />

@@ -8,7 +8,7 @@ const Menu = props => {
         <Link to="/" className="menu-item-link">Home</Link>
       </li>
       <li className="menu-item">
-        <Link to="/about" className="menu-item-link">About</Link>
+        <Link to="/yourCart" className="menu-item-link">Your Cart</Link>
       </li>
       <li className="menu-item">
         <Link to="/contact" className="menu-item-link">Contact</Link>

@@ -1,7 +1,7 @@
 const stoc= [
     {
       id: "1",
-      title: "Jucarii",
+      title: "Toys",
       imageLink:
         "https://pluspng.com/img-png/lego-birthday-png-lego-club-magazine-party-birthday-toy-lego-900.jpg",
       price: 250,
