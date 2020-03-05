@@ -5,13 +5,19 @@ const Menu = props => {
   return (
     <ul className={props.clasaMeniu}>
       <li className="menu-item">
-        <Link to="/" className="menu-item-link">Home</Link>
+        <Link to="/" className="menu-item-link">
+          Home
+        </Link>
       </li>
       <li className="menu-item">
-        <Link to="/yourCart" className="menu-item-link">Your Cart</Link>
+        <Link to="/your-cart" className="menu-item-link">
+          Your Cart
+        </Link>
       </li>
       <li className="menu-item">
-        <Link to="/contact" className="menu-item-link">Contact</Link>
+        <Link to="/add-product" className="menu-item-link">
+          Add products
+        </Link>
       </li>
     </ul>
   );

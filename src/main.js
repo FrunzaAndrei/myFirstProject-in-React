@@ -9,9 +9,9 @@ import Cartonas from "./cartonas-prod/cartonas";
 import CarouselComponent from "./carousel/CarouselComponent";
 import "./main.css";
 import stoc from "./stoc";
-import Contact from "./contact-page/contact";
 import { Route } from "react-router-dom";
 import YourCart from "./your-cart/yourCart";
+import AddProduct from "./addProduct-page/addProduct";
 
 class Main extends Component {
   constructor(props) {
@@ -21,7 +21,9 @@ class Main extends Component {
       stoc: stoc,
       demands: [],
       screen: "Home",
-      displayReceipt: false
+      displayReceipt: false,
+      emailAdmin: "admin@admin.com",
+      passwordAdmin: "admin"
     };
   }
 
@@ -116,23 +118,26 @@ class Main extends Component {
         />
 
         <Route
-          path="/yourCart"
+          path="/your-cart"
           render={() => (
             <div>
               <YourCart
                 items={this.state.stoc}
                 condition={this.state.displayReceipt}
-                finalPrice = {this.totalPrice()}
+                finalPrice={this.totalPrice()}
               />
             </div>
           )}
         />
 
         <Route
-          path="/contact"
+          path="/add-product"
           render={() => (
             <div>
-              <Contact />
+              <AddProduct
+                emailAdmin={this.state.emailAdmin}
+                passwordAdmin={this.state.passwordAdmin}
+              />
             </div>
           )}
         />

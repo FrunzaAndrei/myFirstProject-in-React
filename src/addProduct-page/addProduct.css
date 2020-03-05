@@ -1,0 +1,91 @@
+.main-auth {
+    background-color: gray;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 69px;
+    left: 0;
+}
+
+.contain-auth {
+    width: 300px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box;
+    border-radius: 4px;
+    box-shadow: 0px 0px 22px -10px white;
+}
+
+.header-bar-text-auth {
+    background: rgb(4, 4, 106);
+    color: white;
+    padding: 15px 30px;
+    font-size: 19px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-top: 0;
+}
+
+.auth-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.auth-form div {
+    display: flex;
+    flex-direction: column;
+    margin: 13px 0;
+}
+
+.auth-form div label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: rgb(4, 4, 106);
+    letter-spacing: -1px;
+    font-weight: 900;    
+}
+
+.auth-form div input {
+    outline: none;
+    width: 160px;
+    height: 22px;
+    border-radius: 4px;
+    border: 1px solid black;
+    transition: border-radius 2s;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(4, 4, 106);
+}
+
+.auth-form div input:focus {
+    border: 2px solid rgb(4, 4, 106);
+    border-radius: 15px;
+}
+
+.auth-form button {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 10px 36px;
+    background: #444;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0px 0px 22px -4px grey;
+}
+
+.auth-form button:hover {
+    background: #333;
+    color: rgba(255, 255, 255, 0.432);
+    box-shadow: 0px 0px 22px 0px grey;
+    cursor: pointer;
+}
