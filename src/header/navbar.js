@@ -9,7 +9,7 @@ const Navbar = props => {
  return (
     <div className="navbar-div">
       <IconHamb displayMenu = {props.displayMenuH}/>
-      <Logo lgName="MyProject" />
+      <Logo lgName="Shopping.ro" />
       {/* just space for flex */}
       <div></div> 
       <div></div>

@@ -23,7 +23,8 @@ class Main extends Component {
       screen: "Home",
       displayReceipt: false,
       emailAdmin: "admin@admin.com",
-      passwordAdmin: "admin"
+      passwordAdmin: "admin",
+      displayAskAdmin: true
     };
   }
 
@@ -38,6 +39,12 @@ class Main extends Component {
       demands: [...prevState.demands, buy],
       displayReceipt: true
     }));
+  };
+
+  displayAdminPanel = () => {
+    this.setState({
+      displayAskAdmin: false
+    });
   };
 
   displayMenuHam = () => {
@@ -137,6 +144,8 @@ class Main extends Component {
               <AddProduct
                 emailAdmin={this.state.emailAdmin}
                 passwordAdmin={this.state.passwordAdmin}
+                conditionDisplay={this.state.displayAskAdmin}
+                displayPanelAdd={this.displayAdminPanel}
               />
             </div>
           )}

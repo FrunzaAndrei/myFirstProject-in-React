@@ -6,8 +6,16 @@ class AddProduct extends Component {
   render() {
     return (
       <div>
-        <h1>This will be Contact page</h1>
-        <Auth emailAd={this.props.emailAdmin} passwordAd={this.props.passwordAdmin}/>
+        {this.props.conditionDisplay === false && (
+          <h1>This will be Contact page</h1>
+        )}
+        {this.props.conditionDisplay === true && (
+          <Auth
+            emailAd={this.props.emailAdmin}
+            passwordAd={this.props.passwordAdmin}
+            displayPanel={this.props.displayPanelAdd}
+          />
+        )}
       </div>
     );
   }
