@@ -1,3 +1,8 @@
+p::selection, input::selection, label::selection {
+    background: rgb(4, 4, 106);
+    color: white;
+}
+
 .main-auth {
     background-color: gray;
     width: 100vw;
@@ -140,4 +145,84 @@
 
 .btn-x-message:hover {
     color: rgba(255, 0, 0, 0.651);
+}
+
+.form-add-product {
+    width: 400px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb(4, 4, 106);
+    box-shadow: 0px 0px 25px -8px grey;
+}
+
+.title-form {
+    font-size: 18px;
+    padding: 15px 15px 15px 43px;
+    margin: 0px;
+    font-weight: bold;
+    color: white;
+    background: rgb(4, 4, 106);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    width: 341px;
+}
+
+.form-add {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-add div {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-add div input {
+    margin-top: 11px;
+    border: 1px solid;
+    border-color: transparent;
+    height: 30px;
+    padding-left: 20px;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px -5px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: border-color 1.5s;
+}
+
+.form-add div input:focus {
+    outline: none;
+    border-color: rgb(4, 4, 106);
+    box-shadow: transparent;
+}
+
+.form-add div label {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.btnAddProduct {
+    border: none;
+    background: rgb(4, 4, 106);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.btnAddProduct:hover {
+    background: rgba(4, 4, 106, 0.9);
+    cursor: pointer;
+}
+
+.btnAddProduct:focus {
+    outline: none;
 }

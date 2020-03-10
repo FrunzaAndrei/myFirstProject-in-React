@@ -37,7 +37,7 @@ const stoc= [
       imageLink:
         "https://www.toysrus.ca/dw/image/v2/BDFX_PRD/on/demandware.static/-/Sites-toys-master-catalog/default/dw3f37c9ec/images/E90E2135_1.jpg?sw=767&sh=767&sm=fit",
       price: 100,
-      star: 5
+      star: 2
     }
   ]
 

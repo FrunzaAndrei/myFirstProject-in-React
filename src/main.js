@@ -9,7 +9,7 @@ import Cartonas from "./cartonas-prod/cartonas";
 import CarouselComponent from "./carousel/CarouselComponent";
 import "./main.css";
 import stoc from "./stoc";
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import YourCart from "./your-cart/yourCart";
 import AddProduct from "./addProduct-page/addProduct";
 
@@ -84,6 +84,20 @@ class Main extends Component {
     });
   }
 
+  addToStoc = (urlImg, titleP, priceP, reviewP) => {
+    let addProduct = {
+      id: this.state.stoc.length + 1,
+      title: titleP,
+      imageLink: urlImg,
+      price: parseInt(priceP),
+      star: reviewP
+    };
+    this.setState({
+      stoc: [...this.state.stoc, addProduct]
+    });
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div className="main">
@@ -146,6 +160,7 @@ class Main extends Component {
                 passwordAdmin={this.state.passwordAdmin}
                 conditionDisplay={this.state.displayAskAdmin}
                 displayPanelAdd={this.displayAdminPanel}
+                addToStoc={this.addToStoc}
               />
             </div>
           )}
@@ -155,4 +170,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(Main);
