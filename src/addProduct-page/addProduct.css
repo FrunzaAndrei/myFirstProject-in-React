@@ -16,7 +16,7 @@ p::selection, input::selection, label::selection {
     width: 300px;
     background-color: white;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-sizing: content-box;
