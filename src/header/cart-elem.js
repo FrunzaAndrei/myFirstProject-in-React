@@ -7,7 +7,7 @@ const CartIcon = props => {
     <div className="cart-icon">
       <img src={Icon} className="cart-icon-img" />
       <p className="cart-number-items">{props.numberItem()}</p>
-      <p className="cart-total-price" > Total plata: {props.finalPrice()} lei</p>
+      <p className="cart-total-price" > Total amount: {props.finalPrice()} lei</p>
     </div>
   );
 };

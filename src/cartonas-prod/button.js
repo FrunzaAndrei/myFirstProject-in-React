@@ -1,6 +1,6 @@
 import React from "react";
 
-const ButtonAdd = props => {
+const ButtonAdd = (props) => {
   const buyThisItem = () => {
     props.buy(props.item);
   };
@@ -8,7 +8,7 @@ const ButtonAdd = props => {
   return (
     <div className="button-add">
       <p className="btn-add" onClick={buyThisItem}>
-        Cumpara
+        Buy
       </p>
     </div>
   );
